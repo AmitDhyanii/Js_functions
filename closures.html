@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+    <script>
+
+        // function with its lexical scope forms a closure
+        //                      OR
+        // function bundled with its lexical environment is known as a closure
+        // Whenever function is returned, even if its vanished in execution context but still it remembers the reference it was pointing to. Its not just that function alone it returns but the entire closure and that's where it becomes interesting !!
+
+        // Q)What is closure?
+        // A)The function bundled with its lexical environment closed to that function
+        // simply function + Lexical environment
+
+        // and closures have very special place in runtime environment
+
+        // The fun in JavaScript is you can assign a variable for a function and also you can pass function as a parameter even you can return the function in JavaScript!!
+
+        // In closures, values in variable are 'pass by reference' hence there values can be changed, and whenever comes the closure inside closure(multilevel one) we can see the function refers the 'parent' variable 
+
+
+
+
+        // uses of closures:
+
+        // Module design Pattern
+        // Currying
+        // Functions like Once
+        // Memoize
+        // setTimeouts
+        // Iterators
+        // maintaining state in async world
+
+
+        function x(){
+            var a = 10;
+            function y(){
+                console.log(a);
+            }
+            y();
+        }
+
+        x();
+
+
+
+        function x(){
+            var a = 10;
+            return function y(){
+                console.log(a);
+            }
+            // return y;
+        }
+
+        var z = x();
+        console.log(z);    // return the whole y function
+        z();              // return value of a = 10
+
+
+
+
+
+
+    </script>
+</body>
+</html>

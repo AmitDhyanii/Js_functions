@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeouts and closures</title>
+</head>
+<body>
+    <script>
+
+    // 1. setTimeout stores the function in a different place and attached a timer to it, when the timer is finished it rejoins the call stack and executed.
+    // 2. Without closure the var reference gives the latest value as it does not retain the original value but rather has the reference so any update in value after timeout will be shown.
+    // 3. If we use let/const because they have block scope, every time a new copy of variable is attached, thus this can be done without closure.
+
+
+    // function x(){
+    //     for(let i=1 ; i<=5 ; i++){
+    //         setTimeout(function(){
+    //             console.log(i);
+    //         }, i * 1000)
+    //     }
+    // }
+
+    // x();
+
+        // same thing using var with Closures
+
+    function x(){
+        for(var i=1 ; i<=5 ; i++){
+            function close(i){
+                setTimeout(function(){
+                    console.log(i);
+                }, i * 1000)
+            }
+            close(i);
+        }
+    }
+
+    x();
+
+
+
+
+
+
+
+
+// 1. An inner function can be directly called using two parenthesis ()().
+// 2. Even parameters can be passed this way (Remember that the function needs to be returned to do this)
+// 3. Closures can also be used for data hiding and encapsulation. So other code cannot access this value.
+// 4. Unused variables are automatically deleted in High Level Programming language by garbage collector. Closures allocate a lot of memory which cannot be deleted so this acts as a disadvantage.
+// 5. Some browsers now have smart garbage collectors that automatically deletes variables that are not used outside closures.
+
+    </script>
+</body>
+</html>

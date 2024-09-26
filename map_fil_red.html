@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // 1. map method is used when we want transformation of whole array.
+    // 2. filter is used when we want to filter the array to obtain required value.
+    // 3. reduce is used when we want to reduce the array to single value eg (max, min, avg, sum, difference etc).
+    // 4. reduce passes two arguments one function(which includes accumulator and initial value as argument itself) and another initial value of accumulator.
+
+
+
+
+    // map
+const arr = [5,8,11,15,20];
+
+function double(x){
+    return 2 * x;
+}
+const output = arr.map(double);
+console.log(output);
+
+function triple(x){
+    return 3 * x;
+}
+console.log(arr.map(triple));
+
+
+
+
+    // filter
+const arry = [4,7,12,14,19,23,27];
+
+function isOdd(y){
+    return y % 2;
+}
+console.log(arry.filter(isOdd));
+
+
+function isEven(y){
+    return y % 2 === 0;
+}
+console.log(arry.filter(isEven));
+
+
+function isGreaterThan11(x){
+    return x>11;
+}
+console.log(arr.filter(isGreaterThan11));
+
+
+
+
+    // reduce
+    // sum of all elemnts in array 
+const array = [1,2,3,4,5];
+let sum = 0;
+for(let i = 0; i<=array.length; i++){
+    sum = sum + i;
+}
+console.log(sum);
+
+//same using reduce method
+const op  = array.reduce(function(acc,curr){
+    acc = acc + curr;
+    return acc;
+},0);
+console.log(op);
+
+
+// Largest element in array
+let max = 0;
+for(let i= 0; i<=array.length; i++){
+    if(array[i] > max){
+        max = array[i];
+    }
+};
+console.log(max);
+
+// same using reduce method
+const otpt = array.reduce(function(acc,curr){
+    if(curr > acc){
+        acc = curr;
+    }
+    return acc;
+}, 0);
+console.log(otpt);
+
+    </script>
+</body>
+</html>

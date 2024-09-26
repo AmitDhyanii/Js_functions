@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+
+
+// Handling promises without using async await
+
+// const p = new Promise((resolve,reject) => {
+//     resolve("Promise Resolved Value!!");
+// });
+// function getData() {
+//     p.then((res) => console.log(res));
+// };
+// getData();
+
+
+
+
+
+// handling promises using async await
+
+// const p1 = new Promise((resolve, reject) => {
+//     setTimeout(function(){
+//         resolve("Promise 1 Resolved!!");
+//     },6000);   
+// });
+
+// const p2 = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         resolve("Promise 2 Resolved");
+//     },12000);
+// });
+
+//  async function handlePromise() {
+//     console.log("Hello World");
+
+//     const val1 = await p1;
+//     console.log("Namaste javascript");
+//     console.log(val1);
+
+//     const val2 = await p2;
+//     console.log("Namaste javascript");
+//     console.log(val2);
+// };  
+// handlePromise();
+
+
+
+// fetch with async & await
+// fetch is a promise and after it resolved it gives a response object(readable stream)
+// fetch() => Response.json() => result or jsonvalue
+
+const API_URL = "";
+
+async function handlePromise(){
+    const data = await fetch(API_URL);
+    const jsonValue = await data;
+    console.log(jsonValue);
+}
+handlePromise();
+
+// error handling using try catch
+const URL = "";
+
+async function handlePromise(){
+
+    try{
+        const data = await fetch(API_URL);
+        const jsonValue = await data;
+        console.log(jsonValue);
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+handlePromise();
+
+// another way of error handling
+const _URL = "";
+
+async function handlePromise(){
+    const data = await fetch(API_URL);
+    const jsonValue = await data;
+    console.log(jsonValue);
+}
+handlePromise().catch((err) => console.log(err));
+
+
+// async is a keyword which is used with function
+// await can only be used inside async function to handle promises
+// async always return the promise
+
+    </script>
+</body>
+</html>
+
+
+

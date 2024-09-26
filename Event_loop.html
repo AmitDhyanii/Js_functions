@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Loop</title>
+</head>
+<body>
+
+
+
+    <script>
+
+// console.log("Start");
+// setTimeout(function(){
+//     console.log("Callback fuction called");
+// },5000);
+// console.log("End");
+
+
+console.log("start");
+
+setTimeout(function(){
+    console.log("CB Timer")
+}, 5000)
+
+fetch("https://api.netflix.com").then(function(){
+    console.log("CB Netflix");
+})
+console.log("end");
+
+
+
+
+// The order in which the Event Loop works is:
+// 1. Call Stack
+
+// 2. Microtask Queue
+//    All the callback functions which come through promises and mutation observer will go inside   microtask queue
+
+// 3. Callback Queue
+
+
+    // JS Engine 
+    // 
+    // 1. JS runtime environment contains all elements required to run JS.
+    // 2. It contains JS engine, set of API's, callback queue, microtask queue, event loop.
+    // 3. JS engine is a piece of code.
+    // 4. Process includes Parsing ---> Compilation -----> Execution.
+    // 5. Parsing breaks code into tokens and converts it into AST(Abstract Syntax Tree).
+    // 6. Modern JS engine follows JIT compilation, it interprets while it optimises code as much as it can.
+    // 7. Execution and Compilation are done together.
+    // 8. Execution has Garbage collector and other optimisation such as inlining, copy elusion, inline caching etc.
+
+
+    </script>
+</body>
+</html>

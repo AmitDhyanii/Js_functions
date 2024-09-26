@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+</head>
+<body>
+    
+<script>
+
+console.log(a);        // undefined
+greet();              // Hello World
+console.log(greet);  // returns the whole function
+
+
+var a = 6;
+
+function greet() {
+    console.log("Hello World");
+}
+
+
+console.log(a);        // 6
+greet();              // Hello World
+console.log(greet);  // returns the whole function
+
+
+
+
+
+
+
+console.log(func);  // undefined
+
+// arrow function
+var func = () => {
+    console.log("Hello World");
+}
+
+console.log(func);  // return the whole function
+
+
+
+
+console.log(greet2);   //undefined
+
+// another way of defining function
+var greet2 = function(){
+    console.log("Hello world");
+}
+
+console.log(greet2);   //return the whole function
+
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
